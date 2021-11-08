@@ -10,33 +10,27 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
         auto_mapping: true
         mappings:
-            App:
+            App\Candidate\Application\Doctrine\Entity\Tags:
                 is_bundle: false
                 type: annotation
-                dir: '%kernel.project_dir%/src/Candidate/Infrastructure/Doctrine/Entity'
-                prefix: 'App\Candidate/Infrastructure/Doctrine/Entity'
-                alias: Candidate
-            App\Candidate\Infrastructure\Doctrine\Entity\Tags:
-                is_bundle: false
-                type: annotation
-                dir: '%kernel.project_dir%/src/Candidate/Infrastructure/Doctrine/Entity'
-                prefix: 'App\Candidate\Infrastructure\Doctrine\Entity\Tags'
+                dir: '%kernel.project_dir%/src/Candidate/Application/Doctrine/Entity'
+                prefix: 'App\Candidate\Application\Doctrine\Entity\Tags'
                 alias: App\Candidate\Infrastructure\Doctrine\Entity\Tags
-            App\Candidate\Infrastructure\Doctrine\Entity\CandidateTag:
+            App\Candidate\Application\Doctrine\Entity\CandidateTag:
                 is_bundle: false
                 type: annotation
-                dir: '%kernel.project_dir%/src/Candidate/Infrastructure/Doctrine/Entity'
-                prefix: 'App\Candidate\Infrastructure\Doctrine\Entity\CandidateTag'
+                dir: '%kernel.project_dir%/src/Candidate/Application/Doctrine/Entity'
+                prefix: 'App\Candidate\Application\Doctrine\Entity\CandidateTag'
                 alias: App\Candidate\Infrastructure\Doctrine\Entity\CandidateTag
-            App\Candidate\Infrastructure\Doctrine\Entity\Note:
+            App\Candidate\Application\Doctrine\Entity\Note:
                 is_bundle: false
                 type: annotation
-                dir: '%kernel.project_dir%/src/Candidate/Infrastructure/Doctrine/Entity'
-                prefix: 'App\Candidate\Infrastructure\Doctrine\Entity\Note'
+                dir: '%kernel.project_dir%/src/Candidate/Application/Doctrine/Entity'
+                prefix: 'App\Candidate\Application\Doctrine\Entity\Note'
                 alias: App\Candidate\Infrastructure\Doctrine\Entity\Note
-            App\Candidate\Infrastructure\Doctrine\Entity\Candidate:
+            App\Candidate\Application\Doctrine\Entity\Candidate:
                 is_bundle: false
                 type: annotation
-                dir: '%kernel.project_dir%/src/Candidate/Infrastructure/Doctrine/Entity'
-                prefix: 'App\Candidate\Infrastructure\Doctrine\Entity\Candidate'
+                dir: '%kernel.project_dir%/src/Candidate/Application/Doctrine/Entity'
+                prefix: 'App\Candidate\Application\Doctrine\Entity\Candidate'
                 alias: App\Candidate\Infrastructure\Doctrine\Entity\Candidate

@@ -19,8 +19,7 @@ abstract class QueryController extends AbstractController
     public function __construct(
         QueryBusInterface $queryBus,
         UrlGeneratorInterface $router
-    )
-    {
+    ) {
         $this->queryBus = $queryBus;
         $this->router = $router;
     }

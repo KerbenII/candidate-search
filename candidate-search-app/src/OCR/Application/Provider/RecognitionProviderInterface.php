@@ -8,6 +8,6 @@ use App\OCR\Application\Response\TextResponse;
 
 interface RecognitionProviderInterface
 {
-    public static function isMimeTypeSupported (string $mimeType): bool;
-    public function recognize (string $blob): TextResponse;
+    public static function isMimeTypeSupported(string $mimeType): bool;
+    public function recognize(string $blob): TextResponse;
 }

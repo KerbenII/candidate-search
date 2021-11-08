@@ -12,7 +12,7 @@ abstract class AbstractRecognitionProvider implements RecognitionProviderInterfa
 {
     protected static array $supportedMimeTypes = [];
 
-    #[Pure] public static function isMimeTypeSupported (string $mimeType): bool
+    #[Pure] public static function isMimeTypeSupported(string $mimeType): bool
     {
         return in_array($mimeType, static::$supportedMimeTypes);
     }

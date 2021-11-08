@@ -6,5 +6,4 @@ namespace App\OCR\Application\Exception;
 
 final class UnsupportedMimeTypeException extends \InvalidArgumentException
 {
-
 }

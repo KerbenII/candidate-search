@@ -12,6 +12,8 @@ use App\Searcher\Application\ValueObject\FiltersValueObject;
 use App\Searcher\Application\Query\SearchCandidatesQuery;
 use App\Shared\Http\Exception\HttpBadRequestException;
 use App\Searcher\Application\ValueObject\AdditionalFieldsValueObject;
+use App\Searcher\Application\ValueObject\QueryValueObject;
+use App\Searcher\Application\ValueObject\PaginationValueObject;
 
 final class SearchCandidatesController extends QueryController
 {
@@ -24,19 +26,17 @@ final class SearchCandidatesController extends QueryController
         try {
             $payload = $request->toArray();
             $query = new SearchCandidatesQuery(
-                $payload['query'],
-                $payload['limit'],
-                $payload['page'],
+                QueryValueObject::fromPayload($payload['query'] ?? ''),
+                PaginationValueObject::fromPayload($payload['limit'] ?? '0', $payload['page'] ?? '0'),
                 SortByValueObject::fromPayload($payload['sortBy']),
                 FiltersValueObject::fromPayload($payload['filters'] ?? []),
                 AdditionalFieldsValueObject::fromPayload($payload['additionalFields'] ?? [])
             );
+            //TODO: Custom Exception Class should be used instead generic one
         } catch (\InvalidArgumentException $e) {
             throw new HttpBadRequestException($e);
         }
 
-        $this->ask($query);
-
-        return $this->json(null);
+        return $this->json($this->ask($query));
     }
 }

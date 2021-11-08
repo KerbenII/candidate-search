@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Candidate\Infrastructure\Doctrine\Entity;
+namespace App\Candidate\Application\Doctrine\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -29,7 +29,7 @@ class Note
     private $note;
 
     /**
-     * @var \App\Candidate\Infrastructure\Doctrine\Entity\Candidate
+     * @var \App\Candidate\Application\Doctrine\Entity\Candidate
      *
      * @ORM\ManyToOne(targetEntity="Candidate")
      * @ORM\JoinColumns({

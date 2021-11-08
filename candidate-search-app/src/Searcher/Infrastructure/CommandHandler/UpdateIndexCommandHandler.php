@@ -10,27 +10,28 @@ use App\Shared\Application\Query\QueryBusInterface;
 use App\Shared\Application\Request\RequestBusInterface;
 use App\Candidate\Infrastructure\Dto\CandidateDetailsDto;
 use App\Candidate\Application\Query\GetCandidateDetailsQuery;
+use JetBrains\PhpStorm\NoReturn;
 
 class UpdateIndexCommandHandler
 {
     private QueryBusInterface $queryBus;
     private RequestBusInterface $requestBus;
 
-    public function __construct(QueryBusInterface $queryBus, RequestBusInterface $requestBus)
-    {
+    public function __construct(
+        QueryBusInterface $queryBus,
+        RequestBusInterface $requestBus,
+    ) {
         $this->queryBus = $queryBus;
         $this->requestBus = $requestBus;
     }
 
-    public function handle(CommandInterface $command): void
+    #[NoReturn] public function handle(CommandInterface $command): void
     {
         /** @var CandidateDetailsDto $candidateDetailsDto */
         $candidateDetailsDto = $this->queryBus->ask((new GetCandidateDetailsQuery($command->getCandidateToUpdate())));
         /* Wyciagniete z ReadModel poprzez https://github.com/undecaf/doctrine-file-storage */
 
         $resumeContent = $this->requestBus->handle(new RecognizerRequest($candidateDetailsDto->getResumeBlob()));
-        dump($resumeContent);die;
-
 
         // Zapis do ES przez ClientBuilder'a i Write Model, natomiast niestety tego już nie zdążę w klasie zamockować
     }

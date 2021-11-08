@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace App\Candidate\Infrastructure\ReadModel\Mock;
 
-use App\Candidate\Application\ReadModel\CandidateDetailsReadModelInterface;
+use App\Candidate\Application\ReadModel\CandidateReadModelInterface;
 use App\Candidate\Infrastructure\Dto\CandidateDetailsDto;
 
-// TODO: extends MockRepository
-final class CandidateDetailsReadModel implements CandidateDetailsReadModelInterface
+final class MockCandidateReadModel implements CandidateReadModelInterface
 {
-    public function byId (int $candidateId): CandidateDetailsDto
+    public function GetCandidateDetails(int $candidateId): CandidateDetailsDto
     {
         return new CandidateDetailsDto(
             $candidateId,
@@ -18,7 +17,7 @@ final class CandidateDetailsReadModel implements CandidateDetailsReadModelInterf
             'Roman',
             'Wójcicki',
             new \DateTime('now'),
-            'asasda' //todo: probably another column for resumeMimeType
+            'asasda'
         );
     }
 }

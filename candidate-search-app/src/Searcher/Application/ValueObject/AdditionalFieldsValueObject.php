@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace App\Searcher\Application\ValueObject;
+
 use App\Shared\Application\ValueObject\BaseValueObject;
 use App\Searcher\Application\Enum\AdditionalFieldsEnum;
 

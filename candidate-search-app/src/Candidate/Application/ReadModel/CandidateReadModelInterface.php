@@ -6,8 +6,8 @@ namespace App\Candidate\Application\ReadModel;
 
 use App\Candidate\Infrastructure\Dto\CandidateDetailsDto;
 
-interface CandidateDetailsReadModelInterface
+interface CandidateReadModelInterface
 {
     //TODO: To powinno być w Repository
-    public function byId(int $candidateId): CandidateDetailsDto;
+    public function GetCandidateDetails(int $candidateId): CandidateDetailsDto;
 }

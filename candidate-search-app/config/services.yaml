@@ -21,13 +21,16 @@ services:
             - '../src/Kernel.php'
             - '../src/Tests/'
 
+    App\Candidate\Application\ReadModel\ReadModelCandidateRepositoryInterface: '@App\Candidate\Infrastructure\ReadModel\Mysql\MockReadModelCandidateRepository'
+
     App\OCR\Infrastructure\RequestHandler\RecognizerRequestHandler:
         arguments:
             $recognitionProviders:
                 - '@App\OCR\Infrastructure\Provider\DummyPdfRecognitionProvider'
                 - '@App\OCR\Infrastructure\Provider\TextRecognitionProvider'
 
-# tutaj nie powinienem po prostu robic Handlerów, a te nie powinny zwracać obsługiwane Query/Command/Request?
+    # Mozna to tez rozwiazac tak jak Providers w OCR czyli Handler ma informacje o Query.
+    # w kazdym razie relacja 1:1
     App\Shared\Infrastructure\MessageBus\QueryBus:
         arguments:
             $handlers:
