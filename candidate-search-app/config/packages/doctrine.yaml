@@ -1,0 +1,42 @@
+doctrine:
+    dbal:
+        url: '%env(resolve:DATABASE_URL)%'
+
+        # IMPORTANT: You MUST configure your server version,
+        # either here or in the DATABASE_URL env var (see .env file)
+        #server_version: '13'
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        auto_mapping: true
+        mappings:
+            App:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Candidate/Infrastructure/Doctrine/Entity'
+                prefix: 'App\Candidate/Infrastructure/Doctrine/Entity'
+                alias: Candidate
+            App\Candidate\Infrastructure\Doctrine\Entity\Tags:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Candidate/Infrastructure/Doctrine/Entity'
+                prefix: 'App\Candidate\Infrastructure\Doctrine\Entity\Tags'
+                alias: App\Candidate\Infrastructure\Doctrine\Entity\Tags
+            App\Candidate\Infrastructure\Doctrine\Entity\CandidateTag:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Candidate/Infrastructure/Doctrine/Entity'
+                prefix: 'App\Candidate\Infrastructure\Doctrine\Entity\CandidateTag'
+                alias: App\Candidate\Infrastructure\Doctrine\Entity\CandidateTag
+            App\Candidate\Infrastructure\Doctrine\Entity\Note:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Candidate/Infrastructure/Doctrine/Entity'
+                prefix: 'App\Candidate\Infrastructure\Doctrine\Entity\Note'
+                alias: App\Candidate\Infrastructure\Doctrine\Entity\Note
+            App\Candidate\Infrastructure\Doctrine\Entity\Candidate:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Candidate/Infrastructure/Doctrine/Entity'
+                prefix: 'App\Candidate\Infrastructure\Doctrine\Entity\Candidate'
+                alias: App\Candidate\Infrastructure\Doctrine\Entity\Candidate

@@ -1,0 +1,126 @@
+openapi: 3.1.0
+info:
+  title: candidate-search-app
+  version: '1.0'
+  summary: Candidate Search REST API
+  description: Candidate Search REST API
+  contact:
+    name: Patryk Węgrzynek
+    email: patryk@reverie.pl
+  license:
+    name: None
+    url: 'https://unlicensed.test'
+servers:
+  - url: 'http://localhost:8081'
+    description: Docker DEV
+tags:
+  - name: search
+    description: Search candidates DB
+paths:
+  /searcher/candidates/search:
+    parameters: []
+    post:
+      summary: ''
+      operationId: searcher-candidates-search
+      responses:
+        '200':
+          description: OK
+      parameters: []
+      description: Use for search candidates
+      tags:
+        - search
+      requestBody:
+        $ref: '#/components/requestBodies/SearchRequest'
+components:
+  schemas:
+    BirthdayDateFilter:
+      type: object
+      description: ''
+      x-examples:
+        example-1:
+          before: 13-11-2021
+          after: 13-11-1996
+      examples:
+        - before: 30-06-2004
+          after: 11-04-1996
+      minProperties: 1
+      maxProperties: 2
+      additionalProperties: false
+      properties:
+        before:
+          $ref: '#/components/schemas/Date'
+        after:
+          $ref: '#/components/schemas/Date'
+    Date:
+      type: string
+      description: Date in day-month-year format (PHP d-m-Y)
+      x-examples:
+        example-1:
+          day: 11
+          month: 4
+          year: 1996
+      examples:
+        - 11-04-1996
+        - 11-04-2004
+      example: d-m-Y
+    Filters:
+      title: Filters
+      examples:
+        - birthDateFilter:
+            notBefore:
+              day: 0
+              month: 0
+              year: 0
+            notAfter:
+              day: 0
+              month: 0
+              year: 0
+      oneOf:
+        - properties:
+            birthdayDateFilter:
+              $ref: '#/components/schemas/BirthdayDateFilter'
+      description: ''
+      type: object
+    SortBy:
+      title: SortBy
+      type: object
+      properties:
+        field:
+          type: string
+          enum:
+            - name
+            - firstName
+            - lastName
+        order:
+          type: string
+          enum:
+            - asc
+            - desc
+  requestBodies:
+    SearchRequest:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              query:
+                type: string
+              filters:
+                $ref: '#/components/schemas/Filters'
+              limit:
+                type: integer
+              page:
+                type: integer
+              sortBy:
+                $ref: '#/components/schemas/SortBy'
+            required:
+              - query
+              - limit
+              - page
+              - sortBy
+      description: Search Request Body
+  securitySchemes:
+    PHPSESSID:
+      name: PHP user session
+      type: apiKey
+      in: header

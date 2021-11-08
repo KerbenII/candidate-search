@@ -1,0 +1,5 @@
+index:
+  path: /searcher/candidates/search
+  controller: App\Searcher\Http\SearchCandidatesController::search
+  methods:
+    - POST
