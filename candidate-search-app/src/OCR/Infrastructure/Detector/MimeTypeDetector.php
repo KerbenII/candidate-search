@@ -7,7 +7,7 @@ namespace App\OCR\Infrastructure\Detector;
 use JetBrains\PhpStorm\Pure;
 use App\OCR\Application\Detector\MimeTypeDetectorInterface;
 
-class MimeTypeDetector implements MimeTypeDetectorInterface
+final class MimeTypeDetector implements MimeTypeDetectorInterface
 {
     private \finfo $detector;
 

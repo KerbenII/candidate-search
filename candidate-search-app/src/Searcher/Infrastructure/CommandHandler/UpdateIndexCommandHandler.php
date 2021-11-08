@@ -12,7 +12,7 @@ use App\Candidate\Infrastructure\Dto\CandidateDetailsDto;
 use App\Candidate\Application\Query\GetCandidateDetailsQuery;
 use JetBrains\PhpStorm\NoReturn;
 
-class UpdateIndexCommandHandler
+final class UpdateIndexCommandHandler
 {
     private QueryBusInterface $queryBus;
     private RequestBusInterface $requestBus;

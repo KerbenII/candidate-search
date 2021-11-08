@@ -10,7 +10,7 @@ use App\OCR\Application\Exception\UnsupportedMimeTypeException;
 use App\Shared\Application\Request\RequestHandlerInterface;
 use App\Shared\Application\Request\RequestInterface;
 
-class RecognizerRequestHandler implements RequestHandlerInterface
+final class RecognizerRequestHandler implements RequestHandlerInterface
 {
     private MimeTypeDetectorInterface $mimeTypeDetector;
     private array $recognitionProviders;

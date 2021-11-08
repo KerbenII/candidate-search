@@ -6,7 +6,7 @@ namespace App\OCR\Application\Response;
 
 use App\Shared\Application\Dto\DtoInterface;
 
-class TextResponse implements DtoInterface
+final class TextResponse implements DtoInterface
 {
     private string $text;
 

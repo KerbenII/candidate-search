@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Searcher\Application\Enum;
 
-class SortByEnum
+final class SortByEnum
 {
     public const ALLOWED_FIELDS = [
         'name',

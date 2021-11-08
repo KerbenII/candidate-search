@@ -8,7 +8,7 @@ use App\Shared\Infrastructure\MessageBus\Exception\HandlerNotFoundException;
 use App\Shared\Application\Command\CommandBusInterface;
 use App\Shared\Application\Command\CommandInterface;
 
-class CommandBus extends AbstractBus implements CommandBusInterface
+final class CommandBus extends AbstractBus implements CommandBusInterface
 {
     public function handle(CommandInterface $command): void
     {

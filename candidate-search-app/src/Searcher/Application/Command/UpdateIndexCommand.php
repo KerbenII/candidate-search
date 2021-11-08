@@ -6,7 +6,7 @@ namespace App\Searcher\Application\Command;
 
 use App\Shared\Application\Command\CommandInterface;
 
-class UpdateIndexCommand implements CommandInterface
+final class UpdateIndexCommand implements CommandInterface
 {
     private int $candidateId;
 

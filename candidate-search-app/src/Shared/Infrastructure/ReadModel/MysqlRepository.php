@@ -8,6 +8,7 @@ use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\ORM\AbstractQuery;
+use App\Shared\Infrastructure\ReadModel\Exception\NotFoundException;
 
 abstract class MysqlRepository
 {

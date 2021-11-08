@@ -8,7 +8,7 @@ use App\Shared\Application\Query\QueryHandlerInterface;
 use App\Shared\Application\Dto\DtoInterface;
 use App\Searcher\Provider\SearchProviderInterface;
 
-class SearchCandidatesQueryHandler implements QueryHandlerInterface
+final class SearchCandidatesQueryHandler implements QueryHandlerInterface
 {
     private SearchProviderInterface $searchProvider;
     public function __construct(SearchProviderInterface $searchProvider)

@@ -9,7 +9,7 @@ use App\Shared\Application\Query\QueryInterface;
 use App\Shared\Application\Dto\DtoInterface;
 use App\Shared\Application\Query\QueryBusInterface;
 
-class QueryBus extends AbstractBus implements QueryBusInterface
+final class QueryBus extends AbstractBus implements QueryBusInterface
 {
     /**
      * @param \App\Shared\Application\Query\QueryInterface $query

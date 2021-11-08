@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Exception\BadRequestException;
 use Throwable;
 
-class HttpBadRequestException extends BadRequestException
+final class HttpBadRequestException extends BadRequestException
 {
     public function __construct(Throwable $previous)
     {

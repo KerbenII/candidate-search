@@ -8,7 +8,7 @@ use App\OCR\Application\Response\TextResponse;
 use JetBrains\PhpStorm\Pure;
 use App\OCR\Application\Provider\RecognitionProviderInterface;
 
-class DummyPdfRecognitionProvider extends AbstractRecognitionProvider implements RecognitionProviderInterface
+final class DummyPdfRecognitionProvider extends AbstractRecognitionProvider implements RecognitionProviderInterface
 {
     protected static array $supportedMimeTypes = [
         'application/pdf'

@@ -9,7 +9,7 @@ use App\Shared\Application\Request\RequestBusInterface;
 use App\Shared\Application\Request\RequestInterface;
 use App\Shared\Application\Dto\DtoInterface;
 
-class RequestBus extends AbstractBus implements RequestBusInterface
+final class RequestBus extends AbstractBus implements RequestBusInterface
 {
     public function handle(RequestInterface $request): DtoInterface
     {

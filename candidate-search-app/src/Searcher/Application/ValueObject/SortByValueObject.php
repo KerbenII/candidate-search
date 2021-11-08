@@ -7,7 +7,7 @@ namespace App\Searcher\Application\ValueObject;
 use App\Shared\Application\ValueObject\BaseValueObject;
 use App\Searcher\Application\Enum\SortByEnum;
 
-class SortByValueObject extends BaseValueObject
+final class SortByValueObject extends BaseValueObject
 {
     private string $field;
     private string $order;

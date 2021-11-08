@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Searcher\Application\ValueObject;
 
-class QueryValueObject
+final class QueryValueObject
 {
     public const MAX_QUERY_LENGTH = 2_000;
     private string $query;

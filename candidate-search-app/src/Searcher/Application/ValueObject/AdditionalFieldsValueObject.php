@@ -7,7 +7,7 @@ namespace App\Searcher\Application\ValueObject;
 use App\Shared\Application\ValueObject\BaseValueObject;
 use App\Searcher\Application\Enum\AdditionalFieldsEnum;
 
-class AdditionalFieldsValueObject extends BaseValueObject
+final class AdditionalFieldsValueObject extends BaseValueObject
 {
     /** @var string[] */
     private array $additionalFields;

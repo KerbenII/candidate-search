@@ -7,7 +7,7 @@ namespace App\Searcher\Application\ValueObject;
 use App\Shared\Application\ValueObject\BaseValueObject;
 use DateTime;
 
-class BirthdateFilterValueObject extends BaseValueObject
+final class BirthdateFilterValueObject extends BaseValueObject
 {
     public const DATE_FORMAT = 'd-m-Y';
     private ?DateTime $before;

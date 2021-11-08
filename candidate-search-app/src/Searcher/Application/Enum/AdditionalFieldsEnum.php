@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Searcher\Application\Enum;
 
-class AdditionalFieldsEnum
+final class AdditionalFieldsEnum
 {
     public const ALLOWED_FIELDS = [
        self::NOTES_FIELD,

@@ -11,7 +11,7 @@ use App\Searcher\Application\ValueObject\AdditionalFieldsValueObject;
 use App\Searcher\Application\ValueObject\QueryValueObject;
 use App\Searcher\Application\ValueObject\PaginationValueObject;
 
-class SearchCandidatesQuery implements QueryInterface
+final class SearchCandidatesQuery implements QueryInterface
 {
     private QueryValueObject $queryValueObject;
     private PaginationValueObject $paginationValueObject;

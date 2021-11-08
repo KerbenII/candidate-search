@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Searcher\Application\Enum;
 
-class FiltersEnum
+final class FiltersEnum
 {
     public const ALLOWED_FILTERS = [
        'birthdayDateFilter'

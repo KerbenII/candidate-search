@@ -9,7 +9,7 @@ use App\Searcher\Application\Enum\FiltersEnum;
 use App\Shared\Application\ValueObject\BaseValueObject;
 use JetBrains\PhpStorm\Pure;
 
-class FiltersValueObject extends BaseValueObject
+final class FiltersValueObject extends BaseValueObject
 {
     /** @var \App\Searcher\Application\ValueObject\Filters\FilterValueObjectInterface[] */
     private array $items;
