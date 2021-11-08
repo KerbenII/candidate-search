@@ -19,6 +19,7 @@ class SearchCandidatesQueryHandler implements QueryHandlerInterface
     public function ask($query): DtoInterface
     {
         //ES query z ReadModel gdzie dokument zawiera tags i notes jako array stringów.
+        //additionalFields z getAdditionalFields dodajemy do fields bazowych
         return $this->searchProvider->search($query);
     }
 }

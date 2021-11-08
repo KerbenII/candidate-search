@@ -32,4 +32,12 @@ class AdditionalFieldsValueObject extends BaseValueObject
     {
         return new self($additionalFields);
     }
+
+    /**
+     * @return string[]
+     */
+    public function getAdditionalFields(): array
+    {
+        return $this->additionalFields;
+    }
 }

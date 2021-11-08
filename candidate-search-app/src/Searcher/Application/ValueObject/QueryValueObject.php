@@ -22,4 +22,12 @@ class QueryValueObject
     {
         return new self($query);
     }
+
+    /**
+     * @return string
+     */
+    public function getQuery(): string
+    {
+        return $this->query;
+    }
 }

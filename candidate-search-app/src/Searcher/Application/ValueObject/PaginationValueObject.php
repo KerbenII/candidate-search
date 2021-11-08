@@ -23,4 +23,20 @@ class PaginationValueObject
     {
         return new self($limit, $page);
     }
+
+    /**
+     * @return int
+     */
+    public function getLimit(): int
+    {
+        return $this->limit;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPage(): int
+    {
+        return $this->page;
+    }
 }
