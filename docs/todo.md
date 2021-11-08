@@ -12,6 +12,6 @@
 
 # Brakuje:
 1. Castowanie exceptionów na JSON (ExceptionListener onKernelException w Http\EventListener)
-2. ReadModelów i Repozytoriów (Mysql jako abstract zaimplementowałem)
+2. ReadModelów i Repozytoriów (Mysql jako abstract zaimplementowałem, przyklad uzycia w Candidate)
 
 

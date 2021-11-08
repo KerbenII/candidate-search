@@ -9,7 +9,6 @@ use App\OCR\Application\Detector\MimeTypeDetectorInterface;
 use App\OCR\Application\Exception\UnsupportedMimeTypeException;
 use App\Shared\Application\Request\RequestHandlerInterface;
 use App\Shared\Application\Request\RequestInterface;
-use App\OCR\Application\Request\RecognizerRequestInterface;
 
 class RecognizerRequestHandler implements RequestHandlerInterface
 {
@@ -32,7 +31,6 @@ class RecognizerRequestHandler implements RequestHandlerInterface
         $fileBlob = $request->getFileBlob();
         $mimeType = $this->mimeTypeDetector->detect($fileBlob);
 
-        //TODO: Czy nie powinienem tutaj ::class mieć, sprawdzać static i dopiero robić instancje?
         $selectedProvider = null;
         foreach ($this->recognitionProviders as $recognitionProvider) {
             if ($recognitionProvider::isMimeTypeSupported($mimeType)) {
